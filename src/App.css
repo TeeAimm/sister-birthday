@@ -1,0 +1,19 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.main-container{
+background: linear-gradient(235deg, #fff, #ffb7ce);
+} */
+
+.main-container {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(235deg, #fff, #ffb7ce); /* your blue / gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,454 @@
+.container {
+  min-height: 100vh;
+ /*  background: linear-gradient(235deg, #fff, #ffb7ce); */ /* linear-gradient(135deg, #fdf0f3, #fff) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Playfair Display", serif;
+  padding: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px 30px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.fade-in {
+  animation: fade 0.6s ease-in;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heading {
+  color: #c9184a;
+  margin-bottom: 20px;
+}
+
+.text {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background: #c9184a;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #a4133c;
+  transform: scale(1.05);
+}
+
+/* 🎂 Cake Animation */
+.cake {
+  position: relative;
+  margin: 30px auto;
+  width: 120px;
+}
+
+.cake-layer {
+  width: 120px;
+  height: 30px;
+  background: #ffb3c6;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.top { background: #ffcad4; }
+.middle { background: #ffb3c6; }
+.bottom { background: #ff8fab; }
+
+/* =========================
+   FLOATING ELEGANT FLAME
+   ========================= */
+
+.cake {
+  position: relative;
+  margin: 60px auto;
+  width: 160px;
+}
+
+/* Floating flame only */
+.floating-flame {
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 36px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff8c9,
+    #ffb703,
+    #fb8500
+  );
+  border-radius: 50% 50% 50% 50%;
+  transform-origin: center bottom;
+  animation: flame-float 1.5s infinite ease-in-out;
+  box-shadow:
+    0 0 18px rgba(255, 183, 3, 0.8),
+    0 0 35px rgba(255, 183, 3, 0.5);
+}
+
+/* Flame motion */
+@keyframes flame-float {
+  0% {
+    transform: translateX(-50%) scale(1) rotate(-1deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.15) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) scale(1) rotate(-1deg);
+    opacity: 0.9;
+  }
+}
+
+/* Cake layers */
+.cake-layer {
+  width: 160px;
+  height: 28px;
+  border-radius: 14px;
+  margin: 6px 0;
+}
+
+.top { background: #ffe5ec; }
+.middle { background: #ffccd5; }
+.bottom { background: #ffb3c6; }
+
+
+/* =========================
+   REALISTIC CAKE STAGE
+   ========================= */
+
+.realcake-stage {
+  display: flex;
+  justify-content: center;
+  margin: 55px 0 40px;
+}
+
+.realcake {
+  position: relative;
+  width: 190px;
+  height: 160px;
+  animation: realcake-float 4s ease-in-out infinite;
+}
+
+/* =========================
+   CAKE TOP (CREAM SURFACE)
+   ========================= */
+
+.realcake-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 170px;
+  height: 46px;
+  background:
+    radial-gradient(circle at 30% 30%, #ffffff, #ffe5ec);
+  border-radius: 85px;
+  box-shadow:
+    inset 0 -6px 8px rgba(255, 255, 255, 0.9),
+    inset 0 3px 4px rgba(0, 0, 0, 0.05),
+    0 6px 14px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+}
+
+/* cream rim */
+.realcake-top::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 12px;
+  width: 145px;
+  height: 18px;
+  background: #ffe5ec;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 -2px 3px rgba(255, 255, 255, 0.7);
+}
+
+/* =========================
+   CAKE SIDE (BODY / HEIGHT)
+   ========================= */
+
+.realcake-side {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 170px;
+  height: 85px;
+  background:
+    linear-gradient(
+      180deg,
+      #ffd1dc 0%,
+      #ffb3c6 50%,
+      #ff8fab 100%
+    );
+  border-radius: 0 0 80px 80px;
+  box-shadow:
+    inset 0 -10px 18px rgba(0, 0, 0, 0.15),
+    inset 0 6px 10px rgba(255, 255, 255, 0.35),
+    0 18px 28px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/* subtle horizontal cream layers */
+.realcake-side::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 12px;
+  width: 145px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 14px 0 rgba(255, 255, 255, 0.25),
+    0 28px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* =========================
+   BASE SHADOW
+   ========================= */
+
+.realcake-base-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 18px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.28),
+    transparent
+  );
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+/* =========================
+   FLOAT ANIMATION
+   ========================= */
+
+@keyframes realcake-float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-7px); }
+  100% { transform: translateY(0); }
+}
+
+/* =========================
+   REFINED SPARKLES
+   ========================= */
+
+.realcake-sparkle {
+  position: absolute;
+  font-size: 12px;
+  color: #ffd166;
+  opacity: 0;
+  animation: realcake-sparkle 3.5s infinite ease-in-out;
+  z-index: 4;
+}
+
+.s1 { top: -10px; left: 24px; animation-delay: 0s; }
+.s2 { top: 12px; right: 26px; animation-delay: 1.3s; }
+.s3 { top: -4px; right: 62px; animation-delay: 2.6s; }
+
+@keyframes realcake-sparkle {
+  0%   { opacity: 0; transform: scale(0.8); }
+  30%  { opacity: 0.9; transform: scale(1); }
+  60%  { opacity: 0; transform: scale(1.2); }
+  100% { opacity: 0; }
+}
+
+
+@keyframes flicker {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Gift box */
+.gift-box {
+  margin: 40px auto;
+  width: 200px;
+  height: 120px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffccd5, #ffe5ec);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.gift-box:hover {
+  transform: scale(1.05);
+}
+
+.gift-text {
+  font-size: 16px;
+  color: #c9184a;
+  font-weight: 500;
+}
+
+.gift-content {
+  padding: 20px;
+  animation: gift-open 0.6s ease;
+}
+
+.gift-message {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+@keyframes gift-open {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.gallery-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 14px;
+  opacity: 0;
+  animation: photo-reveal 0.8s ease forwards;
+}
+
+@keyframes photo-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+/* 🎉 Age */
+.age-box {
+  font-size: 64px;
+  font-weight: 700;
+  color: #c9184a;
+  margin: 30px 0;
+  position: relative;
+  transition: all 0.3s ease;
+
+ /*  font-size: 60px;
+  color: #c9184a;
+  margin: 20px 0; */
+}
+
+/* .age-box.celebrate {
+  animation: age-pop 0.8s ease-out forwards;
+  color: #ff4d6d;
+  text-shadow: 0 0 12px rgba(255, 77, 109, 0.6);
+} */
+
+@keyframes age-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.age-spark {
+  position: absolute;
+  inset: -20px;
+  background:radial-gradient(
+  ellipse at center,
+  rgba(255,182,193,0.45),
+  rgba(255,182,193,0.25) 40%,
+  transparent 75%
+);
+  z-index: -1;
+  animation: spark-flash 0.6s ease-out forwards;
+}
+
+@keyframes spark-flash {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+.age-box.celebrate {
+  animation:
+    age-pop 0.8s ease-out forwards,
+    age-float 2.5s ease-in-out infinite 0.8s;
+}
+
+@keyframes age-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+
+
+/* 📸 Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  height: 120px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+

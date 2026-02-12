@@ -1,0 +1,96 @@
+import React, { useRef, useState } from 'react'
+import "./Spinner.css";
+import Confetti from "react-confetti";
+
+const outcomes = [
+    "💌 You are deeply loved. Always.",
+    "😂 Dare: Send a selfie to your sister RIGHT NOW!",
+    "🎁 Hint: Your gift is waiting on the next page 😉",
+    "👑 Today & always — Birthday Queen!",
+    "✨ Something beautiful is coming your way.",
+    "🥰 You get unlimited hugs today!"
+];
+
+const Spinner = ({ setStep }) => {
+    const spinAudioRef = useRef(null);
+    const [showConfetti, setShowConfetti] = useState(false);
+    const [rotation, setRotation] = useState(0);
+    const [isSpinning, setIsSpinning] = useState(false);
+    const [result, setResult] = useState("");
+
+    const spinWheel = () => {
+        setIsSpinning(true);
+        setResult("");
+
+        const randomIndex = Math.floor(Math.random() * outcomes.length);
+        const spins = 5 * 360 + randomIndex * (360 / outcomes.length);
+
+        // 🔊 play sound
+        if (spinAudioRef.current) {
+            spinAudioRef.current.currentTime = 0;
+            spinAudioRef.current.volume = 0.3; // subtle
+            spinAudioRef.current.play();
+        }
+
+        setRotation(spins);
+
+        setTimeout(() => {
+            setIsSpinning(false);
+            setResult(outcomes[randomIndex]);
+            // 🔇 stop sound
+            if (spinAudioRef.current) {
+                spinAudioRef.current.pause();
+            }
+
+            setShowConfetti(true);
+            setTimeout(() => setShowConfetti(false), 800);
+        }, 4000);
+    };
+
+    return (
+        <>
+            <audio ref={spinAudioRef} src="/spin.mp3" preload="auto" />
+            {showConfetti && (
+                <div className="spark-burst" />
+
+            )}
+
+
+            <h1 className="heading">Spin the wheel 🎡</h1>
+            <p className="text">Because birthdays deserve a little drama 😄</p>
+
+            <div className="wheel-container">
+                <div
+                    className={`wheel ${isSpinning ? "spinning" : ""}`}
+                    style={{ transform: `rotate(${rotation}deg)` }}
+                >
+                    <span>💌 Love</span>
+                    <span>😂 Dare</span>
+                    <span>🎁 Gift</span>
+                    <span>👑 Queen</span>
+                    <span>✨ Surprise</span>
+                    <span>🥰 Hug</span>
+                </div>
+
+                <div className="wheel-pointer">▼</div>
+            </div>
+
+            {!result && (
+                <button className="btn" onClick={spinWheel} disabled={isSpinning}>
+                    Spin 🎯
+                </button>
+            )}
+
+            {result && (
+                <>
+                    <p className="spin-result">{result}</p>
+                    <button className="btn" onClick={() => setStep(8)}>
+                        Continue 💕
+                    </button>
+                </>
+            )}
+        </>
+    )
+}
+
+export default Spinner

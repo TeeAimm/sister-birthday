@@ -1,0 +1,80 @@
+.rosecake-stage {
+  display: flex;
+  justify-content: center;
+  margin: 45px 0;
+}
+
+.rosecake {
+  animation: cake-float 4.5s ease-in-out infinite;
+}
+
+/* subtle floating cake */
+@keyframes cake-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* gentle petal shimmer */
+.rosecake-petals {
+  animation: petal-breathe 5s ease-in-out infinite;
+}
+
+@keyframes petal-breathe {
+  0% { opacity: 0.95; }
+  50% { opacity: 1; }
+  100% { opacity: 0.95; }
+}
+
+/* candle sway */
+.rosecake-candles path {
+  animation: candle-sway 2.8s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+@keyframes candle-sway {
+  0% { transform: rotate(-1deg); }
+  50% { transform: rotate(1.5deg); }
+  100% { transform: rotate(-1deg); }
+}
+
+/* flame flicker */
+.rosecake-flame {
+  animation: flame-flicker 1.2s infinite ease-in-out;
+  transform-origin: center bottom;
+}
+
+@keyframes flame-flicker {
+  0% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
+
+/* Pearl dust shimmer */
+.rosecake-dust circle {
+  opacity: 0;
+  animation: dust-twinkle 3.5s infinite ease-in-out;
+}
+
+.rosecake-dust circle:nth-child(1) { animation-delay: 0s; }
+.rosecake-dust circle:nth-child(2) { animation-delay: 1s; }
+.rosecake-dust circle:nth-child(3) { animation-delay: 2s; }
+.rosecake-dust circle:nth-child(4) { animation-delay: 3s; }
+
+@keyframes dust-twinkle {
+  0%   { opacity: 0; }
+  30%  { opacity: 0.7; }
+  60%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Flame glow reflection */
+.rosecake-glow {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%   { opacity: 0.4; }
+  50%  { opacity: 0.7; }
+  100% { opacity: 0.4; }
+}
