@@ -70,6 +70,8 @@ const Gallery = () => {
                         loading="lazy"
                         className="photo-thumb"
                         onClick={() => setActiveIndex(i)}
+                        decoding="async"
+                        onLoad={(e) => e.target.classList.add("loaded")}
                     />
                 ))}
             </div>

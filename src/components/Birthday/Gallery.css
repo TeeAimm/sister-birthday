@@ -13,7 +13,20 @@
   cursor: pointer;
   height: 120px;
   animation: photo-reveal 0.8s ease forwards;
+  filter: blur(8px);
+  transition: filter 0.4s ease;
 }
+
+.photo-thumb.loaded {
+  filter: blur(0);
+}
+
+.photo-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 
 @keyframes photo-reveal {
   from {

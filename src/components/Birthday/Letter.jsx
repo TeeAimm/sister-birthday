@@ -5,7 +5,6 @@ const Letter = () => {
     const [musicOn, setMusicOn] = useState(true);
     const audioRef = useRef(null);
     const [showLetter, setShowLetter] = useState(false);
-    const [showEnvelope, setShowEnvelope] = useState(true);
 
     const openEnvelope = () => {
         setIsLetterOpen(true);
@@ -95,8 +94,13 @@ const Letter = () => {
                                 Always your sister,
                                 <br />❤️
                             </p>
-                            <img
+                            {/* <img
                                 src="/gold-wax-seal.webp"
+                                alt="Wax seal"
+                                className="wax-seal"
+                            /> */}
+                            <img
+                                src="/golden-love-stamp.png"
                                 alt="Wax seal"
                                 className="wax-seal"
                             />
