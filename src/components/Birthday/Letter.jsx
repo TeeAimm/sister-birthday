@@ -45,27 +45,27 @@ const Letter = () => {
             </button>
 
             <div className="letter-stage">
-                <div className={`envelope-wrapper `}>
-                    {!showLetter && (
-                        <div
-                            className={`envelope ${isLetterOpen ? "open fade-out" : ""}`}
-                            onClick={!isLetterOpen ? openEnvelope : undefined}
-                        /*  onAnimationEnd={() => {
-                            
-                             if (isLetterOpen) {
-                                 setShowEnvelope(false);
-                             }
-                         }} */
-                        >
-                            <div className="envelope-flap"></div>
-                            <div className="envelope-body">
-                                <p className="envelope-text">
-                                    Open when you need your sister ❤️
-                                </p>
-                            </div>
+                {/*  <div className={`envelope-wrapper `}> */}
+                {!showLetter && (
+                    <div
+                        className={`envelope ${isLetterOpen ? "open fade-out" : ""}`}
+                        onClick={!isLetterOpen ? openEnvelope : undefined}
+                    /*  onAnimationEnd={() => {
+                        
+                         if (isLetterOpen) {
+                             setShowEnvelope(false);
+                         }
+                     }} */
+                    >
+                        <div className="envelope-flap"></div>
+                        <div className="envelope-body">
+                            <p className="envelope-text">
+                                Open when you need your sister ❤️
+                            </p>
                         </div>
-                    )}
-                </div>
+                    </div>
+                )}
+                {/* </div> */}
                 {showLetter && (
                     <div className="letter-slot">
                         <div className="letter letter-from-envelope">
@@ -95,6 +95,11 @@ const Letter = () => {
                                 Always your sister,
                                 <br />❤️
                             </p>
+                            <img
+                                src="/gold-wax-seal.webp"
+                                alt="Wax seal"
+                                className="wax-seal"
+                            />
                         </div>
                     </div>
                 )}

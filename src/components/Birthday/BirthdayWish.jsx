@@ -4,18 +4,7 @@ import "./BirthdayWish.css";
 import Cake from "./Cake";
 import Spinner from "./Spinner";
 import Letter from "./Letter";
-import CustomLetter from "./CustomLetter";
-
-const photos = [
-  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-  "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7",
-  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-  "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7"
-];
+import Gallery from "./Gallery";
 
 const BirthdayWish = () => {
   const ageAudioRef = useRef(null);
@@ -110,8 +99,6 @@ const BirthdayWish = () => {
           </>
         )}
 
-
-
         {/* PAGE 4 – MESSAGE */}
         {step === 4 && (
           <>
@@ -148,17 +135,7 @@ const BirthdayWish = () => {
           <>
             <h1 className="heading">Us, always 💕</h1>
 
-            <div className="gallery">
-              {photos.map((src, index) => (
-                <img
-                  key={index}
-                  src={src}
-                  alt={`memory-${index}`}
-                  className="gallery-img"
-                  style={{ animationDelay: `${index * 0.3}s` }}
-                />
-              ))}
-            </div>
+            <Gallery />
 
             <button className="btn" onClick={() => setStep(7)}>
               Open your gift 🎁
@@ -175,7 +152,6 @@ const BirthdayWish = () => {
         {step === 8 && (
           <>
             <Letter />
-            {/* <CustomLetter /> */}
           </>
         )}
       </div>
