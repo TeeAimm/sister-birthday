@@ -4,11 +4,11 @@ import Confetti from "react-confetti";
 
 const outcomes = [
     "💌 You are deeply loved. Always.",
-    "😂 Dare: Send a selfie to your sister RIGHT NOW!",
-    "🎁 Hint: Your gift is waiting on the next page 😉",
-    "👑 Today & always — Birthday Queen!",
-    "✨ Something beautiful is coming your way.",
-    "🥰 You get unlimited hugs today!"
+    "😂 Dare alert! 10 push-ups, no excuses!",
+    "🎁 Secret hint - Your surprise arrives this evening 😉",
+    "👑 Today, tomorrow, forever — Birthday Queen energy!",
+    "✨ Something magical is coming your way.",
+    "🥰 Unlimited hugs + biryani 😋 — lifetime subscription!"
 ];
 
 const Spinner = ({ setStep }) => {
@@ -25,10 +25,9 @@ const Spinner = ({ setStep }) => {
         const randomIndex = Math.floor(Math.random() * outcomes.length);
         const spins = 5 * 360 + randomIndex * (360 / outcomes.length);
 
-        // 🔊 play sound
         if (spinAudioRef.current) {
             spinAudioRef.current.currentTime = 0;
-            spinAudioRef.current.volume = 0.3; // subtle
+            spinAudioRef.current.volume = 0.3;
             spinAudioRef.current.play();
         }
 
@@ -52,9 +51,7 @@ const Spinner = ({ setStep }) => {
             <audio ref={spinAudioRef} src="/spin.mp3" preload="auto" />
             {showConfetti && (
                 <div className="spark-burst" />
-
             )}
-
 
             <h1 className="heading">Spin the wheel 🎡</h1>
             <p className="text">Because birthdays deserve a little drama 😄</p>
@@ -75,11 +72,14 @@ const Spinner = ({ setStep }) => {
                 <div className="wheel-pointer">▼</div>
             </div>
 
-            {!result && (
+            {/* {!result && (
                 <button className="btn" onClick={spinWheel} disabled={isSpinning}>
                     Spin 🎯
                 </button>
-            )}
+            )} */}
+            {!result && <button className="btn" onClick={spinWheel} disabled={isSpinning}>
+                {isSpinning ? "Spinning…" : "Spin 🎯"}
+            </button>}
 
             {result && (
                 <>

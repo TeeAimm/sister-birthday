@@ -40,7 +40,7 @@
   margin: 0 auto;
 
   /* Background image */
- /*  background-image: url("/letter-pink.jpg");
+  /* background-image: url("/pink-leaf-bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; */
@@ -268,3 +268,50 @@
   50% { transform: scale(1.05) rotate(-8deg); }
 }
 
+/* Leaf signature container */
+.leaf-signature {
+  position: relative;
+  margin-top: 32px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Stem */
+.leaf-signature::before {
+  content: "";
+  position: absolute;
+  width: 46px;
+  height: 2px;
+  background: linear-gradient(90deg, #e8a3b7, #c94f7c);
+  border-radius: 2px;
+  transform: rotate(-12deg);
+  opacity: 0.9;
+}
+
+/* Leaf base */
+.leaf {
+  position: absolute;
+  width: 14px;
+  height: 22px;
+  background: linear-gradient(135deg, #ffd1dc, #e75480);
+  border-radius: 0 100% 0 100%;
+  transform-origin: bottom center; /* 👈 KEY FIX */
+  box-shadow: 0 4px 8px rgba(231, 84, 128, 0.25);
+  border-radius: 20% 80% 20% 80%;
+  filter: blur(0.2px);
+}
+
+/* Attach leaves to stem */
+.leaf-1 {
+  transform: translate(-12px, -6px) rotate(-35deg);
+}
+
+.leaf-2 {
+  transform: translate(0px, -10px) rotate(5deg);
+}
+
+.leaf-3 {
+  transform: translate(14px, -6px) rotate(38deg);
+}

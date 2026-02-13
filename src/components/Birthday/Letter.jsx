@@ -99,11 +99,13 @@ const Letter = () => {
                                 alt="Wax seal"
                                 className="wax-seal"
                             /> */}
-                            <img
-                                src="/golden-love-stamp.png"
-                                alt="Wax seal"
-                                className="wax-seal"
-                            />
+
+                            {/* <div className="leaf-signature">
+                                <span className="leaf leaf-1"></span>
+                                <span className="leaf leaf-2"></span>
+                                <span className="leaf leaf-3"></span>
+                            </div> */}
+
                         </div>
                     </div>
                 )}

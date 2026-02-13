@@ -12,6 +12,9 @@ const BirthdayWish = () => {
   const [step, setStep] = useState(1);
   const [age, setAge] = useState(1);
 
+  const [flameOut, setFlameOut] = useState(false);
+
+
   useEffect(() => {
     if (step === 3 && age < 25) {
       const timer = setTimeout(() => setAge(age + 1), 80);
@@ -52,8 +55,9 @@ const BirthdayWish = () => {
           <>
             <h1 className="heading">A little surprise ✨</h1>
             <p className="text">
-              For someone who makes life brighter,
-              louder, funnier and warmer 💕
+              {/*  For someone who makes life brighter,
+              louder, funnier and warmer 💕 */}
+              For my loving sister <b>Sarita</b> — the one who makes life feel easier, warmer, happier, and endlessly brighter 💖
             </p>
             <button className="btn" onClick={() => setStep(2)}>
               Start 🎀
@@ -61,12 +65,10 @@ const BirthdayWish = () => {
           </>
         )}
 
-        {/* PAGE 2 – ANIMATED CAKE */}
         {/* PAGE 2 – NEW ELEGANT CANDLE */}
-        {/* PAGE 2 – SYMBOLIC FLAME */}
-        {step === 2 && (
+        {/* {step === 2 && (
           <>
-            <h1 className="heading">Make a wish 🎂</h1>
+            <h1 className="heading">Close your eyes & make a wish 🎂</h1>
 
             <div className="cake">
               <div className="floating-flame"></div>
@@ -80,7 +82,33 @@ const BirthdayWish = () => {
               Next ✨
             </button>
           </>
+        )} */}
+
+        {step === 2 && (
+          <div className="wish-stage">
+            <h1 className="heading">Make a wish 🎂</h1>
+
+            <p className="hint">Blow or tap the flame ✨</p>
+
+            <div className="cake">
+              <div
+                className={`floating-flame ${flameOut ? "out" : ""}`}
+                onClick={() => setFlameOut(true)}
+              />
+
+              <div className="cake-layer top" />
+              <div className="cake-layer middle" />
+              <div className="cake-layer bottom" />
+            </div>
+
+            {flameOut && (
+              <button className="btn next-btn" onClick={() => setStep(3)}>
+                Wish made ✨ Next
+              </button>
+            )}
+          </div>
         )}
+
 
         {/* PAGE 3 – AGE ANIMATION */}
         {step === 3 && (
@@ -102,12 +130,17 @@ const BirthdayWish = () => {
         {/* PAGE 4 – MESSAGE */}
         {step === 4 && (
           <>
-            <h1 className="heading">From my heart 💌</h1>
+            <h1 className="heading">From my heart <span className="heart-pulse">💌</span></h1>
             <p className="text">
-              You are my safe place,
+              {/* You are my safe place,
               my constant,
               my favourite soul ❤️
-              Life is better with you in it.
+              Life is better with you in it. */}
+              You are my safe place,
+              my constant,
+              my bestest friend,
+              and my favourite soul ❤️
+              Life feels brighter and better with you in it.
             </p>
             <button className="btn" onClick={() => setStep(5)}>
               Continue 💖
