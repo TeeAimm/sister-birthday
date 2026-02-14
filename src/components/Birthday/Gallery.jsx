@@ -3,15 +3,19 @@ import './Gallery.css'
 
 const photos = [
     '/photos/SaritaGulmarg1.jpg',
-    '/photos/weAll.jpg',
+    '/photos/SaritaFlag.jpeg',
     '/photos/SaritaMaa.jpg',
     '/photos/SaritaPapa.jpg',
+    '/photos/Sarita1.jpg',
+    '/photos/SaritaBeautiful.jpg',
+    '/photos/WeAll2.jpeg',
+    '/photos/weAll.jpg',
+
     '/photos/meSaritaGulmarg.jpg',
     '/photos/Style.jpg',
     '/photos/SaritaDrawing.jpg',
     '/photos/SaritaApple.jpg',
-    '/photos/Sarita1.jpg',
-    '/photos/SaritaBeautiful.jpg',
+
     '/photos/SaritaPlaying.jpg',
     '/photos/SaritaSnow.jpg',
     '/photos/saritaMeSnow.jpg',

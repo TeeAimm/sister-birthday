@@ -154,7 +154,7 @@ const BirthdayWish = () => {
             <Gallery />
 
             <button className="btn" onClick={() => setStep(7)}>
-              Open your gift 🎁
+              Tap for fun 🎁
             </button>
           </>
         )}
