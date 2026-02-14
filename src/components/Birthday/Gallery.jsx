@@ -12,19 +12,10 @@ const photos = [
     '/photos/SaritaApple.jpg',
     '/photos/Sarita1.jpg',
     '/photos/SaritaBeautiful.jpg',
-    '/photos/SaritaGulmarg.jpg',
+    '/photos/SaritaPlaying.jpg',
     '/photos/SaritaSnow.jpg',
     '/photos/saritaMeSnow.jpg',
-    '/photos/SaritaPlaying.jpg',
-
-    /* '/photos/SaritaHorse.jpg',
-    '/photos/faceMask.jpg',
-    '/photos/MeSarita.jpg',
-    '/photos/meSarita1.jpg',
-    '/photos/SaritaFunction.jpg',
-    '/photos/SaritaStyle.jpg',
-    '/photos/SaritaMePariMahal.jpg',
-    '/photos/SaritaLaddu.jpg', */
+    '/photos/SaritaMeLove.jpg'
 
     /* "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
     "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
@@ -65,26 +56,35 @@ const Gallery = () => {
         <>
             <div className="photo-grid">
                 {photos.map((src, i) => (
-                    <img
-                        key={i}
-                        src={src}
-                        alt={`Memory ${i + 1}`}
-                        loading="lazy"
-                        className="photo-thumb"
-                        onClick={() => setActiveIndex(i)}
-                        decoding="async"
-                        onLoad={(e) => e.target.classList.add("loaded")}
-                    />
+                    /*  <img
+                         key={i}
+                         src={src}
+                         alt={`Memory ${i + 1}`}
+                         loading="lazy"
+                         className="photo-thumb"
+                         onClick={() => setActiveIndex(i)}
+                         decoding="async"
+                         onLoad={(e) => e.target.classList.add("loaded")}
+                     /> */
+                    <div className="photo-wrapper" key={i}>
+                        <div className="shimmer" />
+                        <img
+                            src={src}
+                            alt={`Memory ${i + 1}`}
+                            loading="lazy"
+                            decoding="async"
+                            className="photo-thumb"
+                            onClick={() => setActiveIndex(i)}
+                            onLoad={(e) => {
+                                e.target.classList.add("loaded");
+                                e.target.previousSibling.classList.add("hide");
+                            }}
+                        />
+                    </div>
+
                 ))}
             </div>
 
-            {/* LIGHTBOX */}
-            {/*  {activePhoto && (
-                <div className="lightbox" onClick={() => setActivePhoto(null)}>
-                    <img src={activePhoto} alt="Full view" className="lightbox-img" />
-                    <span className="close-btn">×</span>
-                </div>
-            )} */}
             {activeIndex !== null && (
                 <div className="lightbox" onClick={() => setActiveIndex(null)}>
                     <img

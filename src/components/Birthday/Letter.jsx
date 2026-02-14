@@ -100,12 +100,6 @@ const Letter = () => {
                                 className="wax-seal"
                             /> */}
 
-                            {/* <div className="leaf-signature">
-                                <span className="leaf leaf-1"></span>
-                                <span className="leaf leaf-2"></span>
-                                <span className="leaf leaf-3"></span>
-                            </div> */}
-
                         </div>
                     </div>
                 )}

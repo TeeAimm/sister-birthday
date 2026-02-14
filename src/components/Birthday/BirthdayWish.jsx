@@ -33,7 +33,7 @@ const BirthdayWish = () => {
         if (step === 3) {
           setStep((prev) => prev + 1);
         }
-      }, 3500); // 2.5s pause feels perfect
+      }, 2500); // 2.5s pause feels perfect
 
       return () => clearTimeout(timer);
     }
@@ -66,23 +66,6 @@ const BirthdayWish = () => {
         )}
 
         {/* PAGE 2 – NEW ELEGANT CANDLE */}
-        {/* {step === 2 && (
-          <>
-            <h1 className="heading">Close your eyes & make a wish 🎂</h1>
-
-            <div className="cake">
-              <div className="floating-flame"></div>
-
-              <div className="cake-layer top" />
-              <div className="cake-layer middle" />
-              <div className="cake-layer bottom" />
-            </div>
-
-            <button className="btn" onClick={() => setStep(3)}>
-              Next ✨
-            </button>
-          </>
-        )} */}
 
         {step === 2 && (
           <div className="wish-stage">
