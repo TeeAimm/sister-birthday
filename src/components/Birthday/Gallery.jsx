@@ -5,7 +5,7 @@ const photos = [
     '/photos/SaritaGulmarg1.jpg',
     '/photos/SaritaFlag.jpeg',
     '/photos/SaritaMaa.jpg',
-    '/photos/SaritaPapa.jpg',
+    '/photos/SaritaPapa1.jpeg',
     '/photos/Sarita1.jpg',
     '/photos/SaritaBeautiful.jpg',
     '/photos/WeAll2.jpeg',

@@ -27,7 +27,7 @@ const Spinner = ({ setStep }) => {
 
         if (spinAudioRef.current) {
             spinAudioRef.current.currentTime = 0;
-            spinAudioRef.current.volume = 0.3;
+            spinAudioRef.current.volume = 0.4;
             spinAudioRef.current.play();
         }
 

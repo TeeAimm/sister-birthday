@@ -47,7 +47,7 @@ const BirthdayWish = () => {
   return (
     <div className="container">
       {step === 1 && <Confetti />}
-      <audio ref={ageAudioRef} src="/age.mp3" preload="auto" />
+      <audio ref={ageAudioRef} src="/happy-birthday-1.mp3" preload="auto" />
 
       <div className="card fade-in">
         {/* PAGE 1 – INTRO */}
