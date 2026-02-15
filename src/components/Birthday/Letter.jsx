@@ -68,31 +68,24 @@ const Letter = () => {
                 {showLetter && (
                     <div className="letter-slot">
                         <div className="letter letter-from-envelope">
-                            <p>My dear sister,</p>
+                            <p>My Dearest Sister Sarita,</p>
                             <p>
-                                Open this when life feels heavy,
-                                when you’re doubting yourself,
-                                or when you just need to feel loved.
+                                Wishing you a very Happy Birthday! May Allah shower you with endless happiness, success, and peace, and may He always protect you from every harm and hardship.
                             </p>
                             <p>
-                                I want you to remember that you are stronger
-                                than you think, kinder than you realise,
-                                and loved more than you’ll ever know.
+                                You are my most cherished person. No matter how old we get or how busy life becomes, I'll always be right here — cheering for you, standing by you, protecting you, and loving you endlessly.
                             </p>
                             <p>
-                                No matter how old we get,
-                                or how busy life becomes,
-                                I’ll always be right here —
-                                cheering for you, protecting you,
-                                and loving you endlessly.
+                                Never doubt your strength, or your worth. You are stronger than you think, kinder than you realise, and loved more than you’ll ever know. You truly are an amazing soul.
                             </p>
                             <p>
                                 Happy 25th, my forever baby 💕
                                 The world is lucky to have you.
                             </p>
                             <p className="signature">
-                                Always your sister,
-                                <br />❤️
+                                Always your Aapamoni,
+                                <br />Tania
+                                <div className='heart-letter'>❤️</div>
                             </p>
                             {/* <img
                                 src="/gold-wax-seal.webp"

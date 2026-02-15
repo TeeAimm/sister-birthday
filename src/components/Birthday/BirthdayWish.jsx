@@ -115,10 +115,6 @@ const BirthdayWish = () => {
           <>
             <h1 className="heading">From my heart <span className="heart-pulse">💌</span></h1>
             <p className="text">
-              {/* You are my safe place,
-              my constant,
-              my favourite soul ❤️
-              Life is better with you in it. */}
               You are my safe place,
               my constant,
               my bestest friend,
